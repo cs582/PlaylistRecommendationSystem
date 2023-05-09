@@ -16,5 +16,4 @@ class Preprocessing:
         """
         df_history = pd.read_csv(self.filename)
         df_history = df_history.drop_duplicates()
-
         return self.df
