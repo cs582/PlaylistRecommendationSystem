@@ -3,3 +3,5 @@ numpy
 tqdm
 nltk
 tokenizers
+torchvision
+torch

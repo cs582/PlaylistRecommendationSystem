@@ -1,1 +1,4 @@
 notebooks
+models
+.DS_Store
+data
