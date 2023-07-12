@@ -71,7 +71,7 @@ class MarkovChain:
         # --------------------
 
         # Initialize dictionary
-        markov_chain = { (a_id, b_id): None for a_id, b_id in zip(track_his[1:], track_his[:-1]) }
+        markov_chain = { (a_id, b_id): None for a_id, b_id in zip(track_his[:-1], track_his[1:]) }
 
         # Compute Probabilities
         for pair in markov_chain.keys():
@@ -94,3 +94,5 @@ class MarkovChain:
 
         # Markov Chain for a double prior
         markov_chain_double_p = self.double_prior_track_mc()
+
+        return markov_chain_single_p, markov_chain_double_p
