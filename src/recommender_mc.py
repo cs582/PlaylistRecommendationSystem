@@ -42,9 +42,3 @@ if __name__=="__main__":
 
     # Create playlist
     playlist = build_playlist(pivot_songs, ss_mc, ds_mc)
-
-
-
-
-
-

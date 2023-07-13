@@ -1,4 +1,4 @@
 notebooks
-models
+models/markov_chain
 .DS_Store
 data
