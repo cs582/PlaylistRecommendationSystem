@@ -17,15 +17,15 @@ def preprocessing(tracks_file, history_file):
     reason = 'End Reason Type'
 
     # Manually Skipped Songs
-    df_history[reason][df_history[reason] == 'MANUALLY_SELECTED_PLAYBACK_OF_A_DIFF_ITEM'] = 'END_OF_SEQUENCE'
+    df_history.loc[df_history[reason] == 'MANUALLY_SELECTED_PLAYBACK_OF_A_DIFF_ITEM', reason] = 'END_OF_SEQUENCE'
     # Skipped backwards
-    df_history[reason][df_history[reason] == 'TRACK_SKIPPED_BACKWARDS'] = 'NATURAL_END_OF_TRACK'
+    df_history.loc[df_history[reason] == 'TRACK_SKIPPED_BACKWARDS', reason] = 'NATURAL_END_OF_TRACK'
     # Manually Paused
-    df_history[reason][df_history[reason] == 'PLAYBACK_MANUALLY_PAUSED'] = 'END_OF_SEQUENCE'
+    df_history.loc[df_history[reason] == 'PLAYBACK_MANUALLY_PAUSED', reason] = 'END_OF_SEQUENCE'
     # Scrub Begin
-    df_history[reason][df_history[reason] == 'SCRUB_BEGIN'] = 'NATURAL_END_OF_TRACK'
+    df_history.loc[df_history[reason] == 'SCRUB_BEGIN', reason] = 'NATURAL_END_OF_TRACK'
     # Scrub End
-    df_history[reason][df_history[reason] == 'SCRUB_END'] = 'NATURAL_END_OF_TRACK'
+    df_history.loc[df_history[reason] == 'SCRUB_END', reason] = 'NATURAL_END_OF_TRACK'
 
     # Skipped forwards
     mask = ~(df_history[reason] == 'TRACK_SKIPPED_FORWARDS') & (
